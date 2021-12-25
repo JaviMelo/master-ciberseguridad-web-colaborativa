@@ -37,6 +37,11 @@
                 return false;
             }
 
+            var response = grecaptcha.getResponse();
+            if(response.length == 0) {
+                alert("Captcha must be filled out");
+                return false;
+            }
             return true;
         }
     });
@@ -77,6 +82,11 @@
             <input type="radio" name="type" value="student">Student
         </div>
 
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <div class="g-recaptcha"
+            data-sitekey="6LdBj8IdAAAAAJnkMIjXcal8C0zPHhqPSp-_fANy"
+            data-callback="onSubmit">
+        </div>
 
 
     </div>
